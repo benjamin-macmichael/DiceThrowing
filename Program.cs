@@ -35,9 +35,13 @@ internal class Program
         System.Console.WriteLine($"\nDICE ROLLING SIMULATION RESULTS\nEach \"*\" represents 1% of the total number of rolls.\nTotal number of rolls = {NumberOfRolls}.\n");
 
         for (int iCount = 0; iCount < output.Length; iCount++)
-        {
-            int percentage = output[iCount] * 100 / NumberOfRolls;
-            System.Console.WriteLine($"{iCount + 2}: {new string('*', percentage)}");
+        {   
+            //we cast the output[iCount] to a float (even though it will just be two zeros after the decimal) so that percentage is able to be a float
+            float percentage = (float)output[iCount] * 100 / NumberOfRolls;
+            //now we round the percentage to the nearest integer
+            int roundedpercentage = (int)Math.Floor(percentage + 0.5);
+            //this code prints out the histogram line by line going through the loop
+            System.Console.WriteLine($"{iCount + 2}: {new string('*', roundedpercentage)}");
         }
 
         System.Console.WriteLine("\nThank you for using the dice throwing simulator. Goodbye!");
