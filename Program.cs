@@ -1,4 +1,9 @@
-﻿using DiceThrowing;
+﻿//Ben Macmichael
+//Section 3
+
+//This program prompts the user for how many times they want to roll 2 6-sided dice, and then prints a histogram of the results
+
+using DiceThrowing;
 
 internal class Program
 {
