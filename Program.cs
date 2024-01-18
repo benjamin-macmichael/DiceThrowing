@@ -39,7 +39,7 @@ internal class Program
             //we cast the output[iCount] to a float (even though it will just be two zeros after the decimal) so that percentage is able to be a float
             float percentage = (float)output[iCount] * 100 / NumberOfRolls;
             //now we round the percentage to the nearest integer
-            int roundedpercentage = (int)Math.Floor(percentage + 0.5);
+            int roundedpercentage = (int)Math.Round(percentage);
             //this code prints out the histogram line by line going through the loop
             System.Console.WriteLine($"{iCount + 2}: {new string('*', roundedpercentage)}");
         }
